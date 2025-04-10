@@ -15,7 +15,7 @@ const API_KEY = process.env.API_KEY;
 async function callGeminiAPI(inputText) {
   try {
       const response = await axios.post(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDtAu_iWTatGcXZucyYEJH0Vcwf7hSJi54`,
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
           {
               model: "gemini-2.0-flash",
               contents: [
