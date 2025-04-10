@@ -31,30 +31,30 @@ const LeftSideApp = () => {
   return (
     <div
       className={`h-[100%] ${
-        isToggled ? 'w-20' : 'w-80'
-      } bg-[#282A2C] pl-4 flex flex-col justify-between absolute transition-all duration-300 ease-in-out`}
+        isToggled ? 'w-20 flex items-center' : 'w-80 pl-4'
+      } bg-[#282A2C] flex flex-col justify-between absolute transition-all duration-300 ease-in-out`}
     >
       {/* Top Section */}
       <div className="top-LS flex flex-col relative">
         {/* Toggle Button */}
         <div
-          className="icon space-y-1 mt-10 w-9 flex h-9 justify-center items-center rounded-full flex-col cursor-pointer ml-2 transition-all ease-in-out bg-none hover:bg-gray-100"
+          className="icon space-y-1 mt-10 w-[50px] flex h-12 justify-center items-center rounded-full flex-col cursor-pointer transition-all ease-in-out bg-none hover:bg-gray-100"
           onClick={() => dispatch(toggle())}
         >
-          <div className="w-4.5 h-[2.5px] bg-[#a4a4a4]"></div>
-          <div className="w-4.5 h-[2.5px] bg-[#a4a4a4]"></div>
-          <div className="w-4.5 h-[2.5px] bg-[#a4a4a4]"></div>
+          <div className="w-5 h-[2.5px] bg-[#a4a4a4]"></div>
+          <div className="w-5 h-[2.5px] bg-[#a4a4a4]"></div>
+          <div className="w-5 h-[2.5px] bg-[#a4a4a4]"></div>
         </div>
 
         {/* Add Chat Section */}
         <div
           className={`addchat ${
-            isToggled ? 'w-[50px] h-12' : 'w-32 h-[55px]'
+            isToggled ? 'w-[50px] h-12 justify-center' : 'w-32 h-[55px] pl-4'
           } bg-[#202122] mt-20 rounded-full flex items-center cursor-pointer transition-all duration-300 ease-in-out`}
         >
           <img
             src="/plus-sign.png"
-            className="h-5 rounded-4xl pl-4"
+            className="h-5 rounded-4xl"
             alt="Add Chat"
           />
           {!isToggled && showNewChatText && (
@@ -75,32 +75,35 @@ const LeftSideApp = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="bottom-LS w-full flex flex-col mb-5 justify-between h-40">
+      <div className={`
+      ${isToggled ? "items-center" : "ml-2"}
+      bottom-LS w-full flex flex-col mb-5 justify-between h-40`}      
+      >
         {/* Help */}
-        <div className="icon2 flex items-center ml-2 cursor-pointer">
+        <div className="icon1 h-10 flex items-center cursor-pointer">
           <HelpOutlineIcon className="text-white" />
           {!isToggled && showText && (
-            <p className="text-white ml-2 transition-opacity duration-300">
+            <p className="text-white transition-opacity duration-300 ml-2">
               Help
             </p>
           )}
         </div>
 
         {/* Activity */}
-        <div className="icon2 flex items-center ml-2 cursor-pointer">
+        <div className="icon2 h-10 flex items-center cursor-pointer">
           <RestoreIcon className="text-white" />
           {!isToggled && showText && (
-            <p className="text-white ml-2 transition-opacity duration-300">
+            <p className="text-white transition-opacity duration-300 ml-2">
               Activity
             </p>
           )}
         </div>
 
         {/* Settings */}
-        <div className="icon2 flex items-center ml-2 cursor-pointer">
+        <div className="icon3 h-10 flex items-center cursor-pointer">
           <SettingsIcon className="text-white" />
           {!isToggled && showText && (
-            <p className="text-white ml-2 transition-opacity duration-300">
+            <p className="text-white transition-opacity duration-300 ml-2">
               Setting
             </p>
           )}

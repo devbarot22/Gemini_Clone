@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Hide scrollbar for WebKit-based browsers (Chrome, Safari, Edge) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Ensure scrolling still works */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  overflow-y: auto;
+}
