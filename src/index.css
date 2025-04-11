@@ -29,3 +29,26 @@
   -ms-overflow-style: none; /* IE and Edge */
   overflow-y: auto;
 }
+
+.chatView {
+  scrollbar-width: none; /* For Firefox */
+  scrollbar-color: #6d6d6d transparent; /* For Firefox */
+}
+
+/* For WebKit browsers (Chrome, Edge, Safari) */
+.chatView::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.chatView::-webkit-scrollbar-track {
+  background: transparent; /* Background of the scrollbar track */
+}
+
+.chatView::-webkit-scrollbar-thumb {
+  background-color: #6d6d6d; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+}
+
+.chatView::-webkit-scrollbar-thumb:hover {
+  background-color: #ffffff; /* Color when hovering over the scrollbar thumb */
+}
