@@ -78,7 +78,7 @@ const ChatComponent = ({ chatHistory, setChatHistory }) => {
             : chat
         )
       );
-    }
+    } 
   };
 
   return (
@@ -125,11 +125,11 @@ const ChatComponent = ({ chatHistory, setChatHistory }) => {
           {chatHistory.map((chat, index) => (
             <div key={index} className="flex flex-col gap-2">
               {/* User Input */}
-              <div className="User self-end bg-[#333537] text-white p-2 px-4 rounded-b-4xl rounded-tl-4xl max-w-[60%] break-words hyphens-auto overflow-hidden">
+              <div className={`User self-end bg-[#333537] text-white text-[16px] p-2 py-4 px-4 rounded-b-3xl rounded-tl-3xl max-w-[60%] break-words hyphens-auto overflow-hidden`}>
                 {chat.user}
               </div>
               {/* AI Response */}
-              <div className="Response self-start text-wrap w-[98%] text-white p-2 rounded-lg">
+              <div className="Response text-[16px] self-start text-wrap w-[98%] text-white p-2 rounded-lg">
                 {chat.loading ? (
                   <div className="relative flex items-center">
                     {/* Loading Circle */}
@@ -141,7 +141,7 @@ const ChatComponent = ({ chatHistory, setChatHistory }) => {
                       className="h-8 w-8"
                     />
                     {/* Typing Indicator */}
-                    <div className="ml-4 text-gray-400 italic">Gemini is typing...</div>
+                    <div className="ml-4 text-gray-400">Gemini is typing...</div>
                   </div>
                 ) : (
                   <div className="flex w-full items-center relative">
@@ -159,7 +159,7 @@ const ChatComponent = ({ chatHistory, setChatHistory }) => {
                           {section.header && (
                             <ReactMarkdown
                               components={{
-                                h1: ({ node, ...props }) => <h1 className="font-bold text-lg" {...props} />,
+                                h1: ({ node, ...props }) => <h1 className="" {...props} />,
                               }}
                             >
                               {section.header}
@@ -169,7 +169,7 @@ const ChatComponent = ({ chatHistory, setChatHistory }) => {
                           {section.content && (
                             <ReactMarkdown
                               components={{
-                                p: ({ node, ...props }) => <p className="text-[15px] ml-4" {...props} />, // Indent child headers
+                                p: ({ node, ...props }) => <p className="ml-4" {...props} />, // Indent child headers
                                 li: ({ node, ...props }) => <li className="list-disc ml-6" {...props} />, // Add dots for child headers
                               }}
                             >
