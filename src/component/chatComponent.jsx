@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown'
 
 const ChatComponent = ({ chatHistory, setChatHistory }) => {
   const [text, setText] = useState(''); // State to store the input value
-  const [loading, setLoading] = useState(false); // State to track loading
+  // const [loading, setLoading] = useState(false); // State to track loading
   const chatViewRef = useRef(null);
 
   useEffect(() => {
@@ -159,7 +159,7 @@ const ChatComponent = ({ chatHistory, setChatHistory }) => {
                           {section.header && (
                             <ReactMarkdown
                               components={{
-                                h1: ({ node, ...props }) => <h1 className="" {...props} />,
+                                h1: ({ ...props }) => <h1 className="" {...props} />,
                               }}
                             >
                               {section.header}
@@ -169,8 +169,8 @@ const ChatComponent = ({ chatHistory, setChatHistory }) => {
                           {section.content && (
                             <ReactMarkdown
                               components={{
-                                p: ({ node, ...props }) => <p className="ml-4" {...props} />, // Indent child headers
-                                li: ({ node, ...props }) => <li className="list-disc ml-6" {...props} />, // Add dots for child headers
+                                p: ({ ...props }) => <p className="ml-4" {...props} />, // Indent child headers
+                                li: ({ ...props }) => <li className="list-disc ml-6" {...props} />, // Add dots for child headers
                               }}
                             >
                               {section.content}
